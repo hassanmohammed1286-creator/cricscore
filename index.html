@@ -1,0 +1,961 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CricScore – Live Cricket Scores & Updates</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="navbar" id="navbar">
+      <div class="nav-container">
+        <div class="logo">
+          <img src="images/logo.png" alt="CricScore logo" class="logo-img" />
+          <div class="logo-text">
+            <span class="logo-cric">CRIC</span>
+            <span class="logo-score">SCORE</span>
+          </div>
+        </div>
+
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#" class="active">Home</a></li>
+          <li><a href="#live">Live Scores</a></li>
+          <li><a href="#teams">Teams</a></li>
+          <li><a href="#players">Players</a></li>
+          <li><a href="#rankings">Rankings</a></li>
+          <li><a href="#news">News</a></li>
+        </ul>
+
+        <div class="nav-icons">
+          <div class="search-bar">
+            <input
+              type="text"
+              placeholder="Search matches, players…"
+              id="searchInput"
+            />
+          </div>
+          <button class="theme-toggle" id="themeToggle" title="Toggle theme">
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            >
+              <circle cx="12" cy="12" r="5" />
+              <line x1="12" y1="1" x2="12" y2="3" />
+              <line x1="12" y1="21" x2="12" y2="23" />
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+              <line x1="1" y1="12" x2="3" y2="12" />
+              <line x1="21" y1="12" x2="23" y2="12" />
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+            </svg>
+          </button>
+          <button class="menu" id="menu" aria-label="Menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+      <!-- <div class="hero-bg">
+        <img
+          src="https://images.unsplash.com/photo-1540747913346-19378d188b55?w=1600&auto=format&fit=crop&q=80"
+        /> -->
+      <div class="hero-overlay"></div>
+      <!-- </div> -->
+      <div class="hero-content">
+        <div class="hero-left">
+          <span class="hero-eyebrow"
+            ><span class="live-dot-pulse"></span> LIVE NOW — 3 MATCHES IN
+            PROGRESS</span
+          >
+          <h1 class="hero-title">
+            LIVE CRICKET<br /><span class="hero-accent">SCORES.</span><br />FAST
+            &amp; RELIABLE.
+          </h1>
+          <p class="hero-desc">
+            Ball-by-ball updates for every international &amp; domestic match
+            across all formats.
+          </p>
+          <div class="hero-actions">
+            <a href="#live" class="btn-primary">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path d="M8 5v14l11-7z" />
+              </svg>
+              Explore Live Matches
+            </a>
+            <a href="#upcoming" class="btn-ghost">View Schedule</a>
+          </div>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <span class="stat-num">3</span
+            ><span class="stat-label">Live Now</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="hero-stat">
+            <span class="stat-num">12</span
+            ><span class="stat-label">This Week</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="hero-stat">
+            <span class="stat-num">48</span
+            ><span class="stat-label">Nations</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-player-wrap">
+        <img
+          src="https://images.unsplash.com/photo-1593341646782-e0b495cff86d?w=500&auto=format&fit=crop&q=80"
+          alt="Cricketer batting"
+          class="hero-player-img"
+        />
+      </div>
+    </section>
+
+    <main class="main-content">
+      <!-- LIVE + UPCOMING -->
+      <div class="two-col" id="live">
+        <section class="card-section">
+          <div class="sec-header">
+            <div class="sec-title-row">
+              <span class="live-indicator"></span>
+              <h2 class="sec-title">Live Matches</h2>
+            </div>
+            <a href="#" class="link-more"
+              >View All
+              <svg
+                width="13"
+                height="13"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+              >
+                <path d="M5 12h14M12 5l7 7-7 7" /></svg
+            ></a>
+          </div>
+          <div class="match-stack">
+            <div class="match-card reveal">
+              <div class="mc-header">
+                <span class="badge-live">● LIVE</span>
+                <div class="mc-meta">
+                  <span class="mc-name">India vs Australia</span
+                  ><span class="mc-sub"
+                    >2nd ODI · Melbourne Cricket Ground</span
+                  >
+                </div>
+                <span class="mc-format odi">ODI</span>
+              </div>
+              <div class="mc-scores">
+                <div class="mc-team">
+                  <div class="flag-wrap">
+                    <svg
+                      width="32"
+                      height="32"
+                      viewBox="0 0 32 32"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <clipPath id="f1">
+                        <circle cx="16" cy="16" r="16" />
+                      </clipPath>
+                      <g clip-path="url(#f1)">
+                        <rect width="32" height="10.7" fill="#FF9933" />
+                        <rect y="10.7" width="32" height="10.7" fill="#fff" />
+                        <rect
+                          y="21.3"
+                          width="32"
+                          height="10.7"
+                          fill="#138808"
+                        />
+                        <circle
+                          cx="16"
+                          cy="16"
+                          r="3.8"
+                          fill="none"
+                          stroke="#000080"
+                          stroke-width="0.9"
+                        />
+                        <circle cx="16" cy="16" r="0.8" fill="#000080" />
+                      </g>
+                    </svg>
+                  </div>
+                  <span class="team-abbr">IND</span>
+                  <div class="score-block">
+                    <span class="team-score" id="indScore">245/5</span
+                    ><span class="team-overs">(42.3)</span>
+                  </div>
+                </div>
+                <div class="mc-vs">VS</div>
+                <div class="mc-team mc-team-right">
+                  <div class="score-block right">
+                    <span class="team-score">—</span>
+                  </div>
+                  <span class="team-abbr">AUS</span>
+                  <div class="flag-wrap">
+                    <svg
+                      width="32"
+                      height="32"
+                      viewBox="0 0 32 32"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <clipPath id="f2">
+                        <circle cx="16" cy="16" r="16" />
+                      </clipPath>
+                      <g clip-path="url(#f2)">
+                        <rect width="32" height="32" fill="#00008B" />
+                        <line
+                          x1="0"
+                          y1="0"
+                          x2="16"
+                          y2="16"
+                          stroke="white"
+                          stroke-width="3.5"
+                        />
+                        <line
+                          x1="16"
+                          y1="0"
+                          x2="0"
+                          y2="16"
+                          stroke="white"
+                          stroke-width="3.5"
+                        />
+                        <line
+                          x1="0"
+                          y1="8"
+                          x2="16"
+                          y2="8"
+                          stroke="white"
+                          stroke-width="3.5"
+                        />
+                        <line
+                          x1="8"
+                          y1="0"
+                          x2="8"
+                          y2="16"
+                          stroke="white"
+                          stroke-width="3.5"
+                        />
+                        <line
+                          x1="0"
+                          y1="0"
+                          x2="16"
+                          y2="16"
+                          stroke="#CC0000"
+                          stroke-width="2"
+                        />
+                        <line
+                          x1="16"
+                          y1="0"
+                          x2="0"
+                          y2="16"
+                          stroke="#CC0000"
+                          stroke-width="2"
+                        />
+                        <circle cx="24" cy="22" r="1.8" fill="white" />
+                        <circle cx="28" cy="16" r="1.2" fill="white" />
+                        <circle cx="26" cy="27" r="1.2" fill="white" />
+                      </g>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <p class="mc-status">
+                Australia need <strong>56 runs</strong> from 45 balls
+              </p>
+              <a href="#" class="btn-card">View Scorecard</a>
+            </div>
+
+            <div class="match-card reveal">
+              <div class="mc-header">
+                <span class="badge-live">● LIVE</span>
+                <div class="mc-meta">
+                  <span class="mc-name">England vs Pakistan</span
+                  ><span class="mc-sub"
+                    >1st T20I · Old Trafford, Manchester</span
+                  >
+                </div>
+                <span class="mc-format t20">T20</span>
+              </div>
+              <div class="mc-scores">
+                <div class="mc-team">
+                  <div class="flag-wrap">
+                    <svg
+                      width="32"
+                      height="32"
+                      viewBox="0 0 32 32"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <clipPath id="f3">
+                        <circle cx="16" cy="16" r="16" />
+                      </clipPath>
+                      <g clip-path="url(#f3)">
+                        <rect width="32" height="32" fill="white" />
+                        <rect x="13" width="6" height="32" fill="#CC0000" />
+                        <rect y="13" width="32" height="6" fill="#CC0000" />
+                      </g>
+                    </svg>
+                  </div>
+                  <span class="team-abbr">ENG</span>
+                  <div class="score-block">
+                    <span class="team-score">189/4</span
+                    ><span class="team-overs">(18.2)</span>
+                  </div>
+                </div>
+                <div class="mc-vs">VS</div>
+                <div class="mc-team mc-team-right">
+                  <div class="score-block right">
+                    <span class="team-score">—</span>
+                  </div>
+                  <span class="team-abbr">PAK</span>
+                  <div class="flag-wrap">
+                    <svg
+                      width="32"
+                      height="32"
+                      viewBox="0 0 32 32"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <clipPath id="f4">
+                        <circle cx="16" cy="16" r="16" />
+                      </clipPath>
+                      <g clip-path="url(#f4)">
+                        <rect width="32" height="32" fill="#01411C" />
+                        <rect width="8" height="32" fill="white" />
+                        <circle cx="17" cy="16" r="5.5" fill="white" />
+                        <circle cx="18.5" cy="16" r="5.5" fill="#01411C" />
+                      </g>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <p class="mc-status">Pakistan won the toss &amp; chose to bowl</p>
+              <a href="#" class="btn-card">View Scorecard</a>
+            </div>
+          </div>
+        </section>
+
+        <!-- UPCOMING -->
+        <section class="card-section" id="upcoming">
+          <div class="sec-header">
+            <h2 class="sec-title">Upcoming Matches</h2>
+            <a href="#" class="link-more"
+              >View All
+              <svg
+                width="13"
+                height="13"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+              >
+                <path d="M5 12h14M12 5l7 7-7 7" /></svg
+            ></a>
+          </div>
+          <ul class="upcoming-list">
+            <li class="upcoming-item reveal">
+              <div class="upcoming-flags">
+                <svg width="28" height="28" viewBox="0 0 28 28">
+                  <clipPath id="u1"><circle cx="14" cy="14" r="14" /></clipPath>
+                  <g clip-path="url(#u1)">
+                    <rect width="28" height="9.3" fill="#FF9933" />
+                    <rect y="9.3" width="28" height="9.3" fill="#fff" />
+                    <rect y="18.6" width="28" height="9.4" fill="#138808" />
+                    <circle
+                      cx="14"
+                      cy="14"
+                      r="3"
+                      fill="none"
+                      stroke="#000080"
+                      stroke-width="0.8"
+                    />
+                  </g>
+                </svg>
+                <svg
+                  class="vs-arrow"
+                  width="10"
+                  height="16"
+                  viewBox="0 0 10 16"
+                  fill="none"
+                >
+                  <path
+                    d="M5 0v16M1 4l4-4 4 4"
+                    stroke="#CBD5E1"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                  />
+                </svg>
+                <svg width="28" height="28" viewBox="0 0 28 28">
+                  <clipPath id="u2"><circle cx="14" cy="14" r="14" /></clipPath>
+                  <g clip-path="url(#u2)">
+                    <rect width="28" height="9.3" fill="#007A4D" />
+                    <rect y="9.3" width="28" height="9.3" fill="#000" />
+                    <rect y="18.6" width="28" height="9.4" fill="#DE3831" />
+                    <polygon points="0,0 0,28 10,14" fill="#FFB612" />
+                  </g>
+                </svg>
+              </div>
+              <div class="upcoming-info">
+                <span class="upc-name">India vs South Africa</span
+                ><span class="upc-meta">3rd ODI · 12 May, 7:00 PM IST</span>
+              </div>
+              <span class="upc-badge odi">ODI</span>
+            </li>
+            <li class="upcoming-item reveal">
+              <div class="upcoming-flags">
+                <svg width="28" height="28" viewBox="0 0 28 28">
+                  <clipPath id="u3"><circle cx="14" cy="14" r="14" /></clipPath>
+                  <g clip-path="url(#u3)">
+                    <rect width="28" height="28" fill="#00247D" />
+                    <line
+                      x1="0"
+                      y1="0"
+                      x2="14"
+                      y2="14"
+                      stroke="white"
+                      stroke-width="3"
+                    />
+                    <line
+                      x1="14"
+                      y1="0"
+                      x2="0"
+                      y2="14"
+                      stroke="white"
+                      stroke-width="3"
+                    />
+                    <line
+                      x1="0"
+                      y1="7"
+                      x2="14"
+                      y2="7"
+                      stroke="white"
+                      stroke-width="3"
+                    />
+                    <line
+                      x1="7"
+                      y1="0"
+                      x2="7"
+                      y2="14"
+                      stroke="white"
+                      stroke-width="3"
+                    />
+                    <line
+                      x1="0"
+                      y1="0"
+                      x2="14"
+                      y2="14"
+                      stroke="#CC0000"
+                      stroke-width="1.5"
+                    />
+                    <line
+                      x1="14"
+                      y1="0"
+                      x2="0"
+                      y2="14"
+                      stroke="#CC0000"
+                      stroke-width="1.5"
+                    />
+                    <circle cx="20" cy="8" r="1.8" fill="#CC0000" />
+                    <circle cx="24" cy="13" r="1.8" fill="#CC0000" />
+                    <circle cx="21" cy="19" r="1.8" fill="#CC0000" />
+                  </g>
+                </svg>
+                <svg
+                  class="vs-arrow"
+                  width="10"
+                  height="16"
+                  viewBox="0 0 10 16"
+                  fill="none"
+                >
+                  <path
+                    d="M5 0v16M1 4l4-4 4 4"
+                    stroke="#CBD5E1"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                  />
+                </svg>
+                <svg width="28" height="28" viewBox="0 0 28 28">
+                  <clipPath id="u4"><circle cx="14" cy="14" r="14" /></clipPath>
+                  <g clip-path="url(#u4)">
+                    <rect width="28" height="28" fill="#8D153A" />
+                    <rect width="5" height="28" fill="#FF7300" />
+                    <rect x="5" width="3" height="28" fill="#009B4E" />
+                  </g>
+                </svg>
+              </div>
+              <div class="upcoming-info">
+                <span class="upc-name">New Zealand vs Sri Lanka</span
+                ><span class="upc-meta">1st Test · 14 May, 3:30 AM IST</span>
+              </div>
+              <span class="upc-badge test">TEST</span>
+            </li>
+            <li class="upcoming-item reveal">
+              <div class="upcoming-flags">
+                <svg width="28" height="28" viewBox="0 0 28 28">
+                  <clipPath id="u5"><circle cx="14" cy="14" r="14" /></clipPath>
+                  <g clip-path="url(#u5)">
+                    <rect width="28" height="28" fill="#006A4E" />
+                    <circle cx="13" cy="14" r="7" fill="#F42A41" />
+                  </g>
+                </svg>
+                <svg
+                  class="vs-arrow"
+                  width="10"
+                  height="16"
+                  viewBox="0 0 10 16"
+                  fill="none"
+                >
+                  <path
+                    d="M5 0v16M1 4l4-4 4 4"
+                    stroke="#CBD5E1"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                  />
+                </svg>
+                <svg width="28" height="28" viewBox="0 0 28 28">
+                  <clipPath id="u6"><circle cx="14" cy="14" r="14" /></clipPath>
+                  <g clip-path="url(#u6)">
+                    <rect width="28" height="28" fill="#009E60" />
+                    <polygon points="0,0 28,14 0,28" fill="#000" />
+                    <polygon points="0,2 0,26 9,14" fill="#009E60" />
+                    <polygon
+                      points="14,6 16,11 21,11 17,14 18,20 14,17 10,20 11,14 7,11 12,11"
+                      fill="#FCD116"
+                    />
+                  </g>
+                </svg>
+              </div>
+              <div class="upcoming-info">
+                <span class="upc-name">Bangladesh vs West Indies</span
+                ><span class="upc-meta">2nd T20I · 16 May, 7:30 PM IST</span>
+              </div>
+              <span class="upc-badge t20">T20</span>
+            </li>
+            <li class="upcoming-item reveal">
+              <div class="upcoming-flags">
+                <svg width="28" height="28" viewBox="0 0 28 28">
+                  <clipPath id="u7"><circle cx="14" cy="14" r="14" /></clipPath>
+                  <g clip-path="url(#u7)">
+                    <rect width="28" height="9.3" fill="#007A4D" />
+                    <rect y="9.3" width="28" height="9.3" fill="#000" />
+                    <rect y="18.6" width="28" height="9.4" fill="#DE3831" />
+                    <polygon points="0,0 0,28 10,14" fill="#FFB612" />
+                  </g>
+                </svg>
+                <svg
+                  class="vs-arrow"
+                  width="10"
+                  height="16"
+                  viewBox="0 0 10 16"
+                  fill="none"
+                >
+                  <path
+                    d="M5 0v16M1 4l4-4 4 4"
+                    stroke="#CBD5E1"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                  />
+                </svg>
+                <svg width="28" height="28" viewBox="0 0 28 28">
+                  <clipPath id="u8"><circle cx="14" cy="14" r="14" /></clipPath>
+                  <g clip-path="url(#u8)">
+                    <rect width="28" height="28" fill="white" />
+                    <rect x="11" width="6" height="28" fill="#CC0000" />
+                    <rect y="11" width="28" height="6" fill="#CC0000" />
+                  </g>
+                </svg>
+              </div>
+              <div class="upcoming-info">
+                <span class="upc-name">South Africa vs England</span
+                ><span class="upc-meta">2nd Test · 18 May, 2:00 PM IST</span>
+              </div>
+              <span class="upc-badge test">TEST</span>
+            </li>
+          </ul>
+        </section>
+      </div>
+
+      <!-- RESULTS + PERFORMERS -->
+      <div class="two-col" id="players">
+        <section class="card-section">
+          <div class="sec-header">
+            <h2 class="sec-title">Recent Results</h2>
+          </div>
+          <ul class="results-list">
+            <li class="result-row reveal">
+              <div class="result-icon win">
+                <svg
+                  width="13"
+                  height="13"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+              </div>
+              <div class="result-body">
+                <span class="result-title"
+                  >New Zealand beat Sri Lanka by 5 wickets</span
+                ><span class="result-sub"
+                  >2nd Test · 10 May 2024 · Colombo</span
+                >
+              </div>
+            </li>
+            <li class="result-row reveal">
+              <div class="result-icon win">
+                <svg
+                  width="13"
+                  height="13"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+              </div>
+              <div class="result-body">
+                <span class="result-title">India beat Australia by 8 runs</span
+                ><span class="result-sub">1st ODI · 08 May 2024 · Sydney</span>
+              </div>
+            </li>
+            <li class="result-row reveal">
+              <div class="result-icon win">
+                <svg
+                  width="13"
+                  height="13"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+              </div>
+              <div class="result-body">
+                <span class="result-title"
+                  >England beat Pakistan by 7 wickets</span
+                ><span class="result-sub"
+                  >3rd T20I · 07 May 2024 · Birmingham</span
+                >
+              </div>
+            </li>
+            <li class="result-row reveal">
+              <div class="result-icon loss">
+                <svg
+                  width="13"
+                  height="13"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                >
+                  <line x1="18" y1="6" x2="6" y2="18" />
+                  <line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
+              </div>
+              <div class="result-body">
+                <span class="result-title"
+                  >South Africa beat Bangladesh by 4 wickets</span
+                ><span class="result-sub">1st ODI · 05 May 2024 · Durban</span>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+        <section class="card-section" id="rankings">
+          <div class="sec-header">
+            <h2 class="sec-title">Top Performers</h2>
+            <div class="perf-nav">
+              <button class="perf-btn" id="perfPrev">
+                <svg
+                  width="13"
+                  height="13"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                >
+                  <path d="M15 18l-6-6 6-6" />
+                </svg>
+              </button>
+              <button class="perf-btn" id="perfNext">
+                <svg
+                  width="13"
+                  height="13"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                >
+                  <path d="M9 18l6-6-6-6" />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="performers-row" id="performersRow">
+            <div class="perf-card reveal">
+              <img src="images/virat.png" alt="batsman" class="virat-img" />
+              <div class="perf-info">
+                <span class="perf-name">V. Kohli</span>
+                <span class="perf-role">IND · Batter</span>
+                <div class="perf-stat-row">
+                  <span class="perf-stat">82</span
+                  ><span class="perf-balls">(67 balls)</span>
+                </div>
+                <span class="perf-match">vs Australia</span>
+              </div>
+              <div class="perf-medal gold">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="perf-card reveal">
+              <img src="images/buttler.png" alt="batsman" class="buttler-img" />
+              <div class="perf-info">
+                <span class="perf-name">J. Buttler</span>
+                <span class="perf-role">ENG · Batter</span>
+                <div class="perf-stat-row">
+                  <span class="perf-stat">76</span
+                  ><span class="perf-balls">(45 balls)</span>
+                </div>
+                <span class="perf-match">vs Pakistan</span>
+              </div>
+              <div class="perf-medal silver">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="perf-card reveal">
+              <img src="images/starc.png" alt="bowler" class="starc-img" />
+              <div class="perf-info">
+                <span class="perf-name">M. Starc</span>
+                <span class="perf-role">AUS · Bowler</span>
+                <div class="perf-stat-row">
+                  <span class="perf-stat">3/42</span
+                  ><span class="perf-balls">(8.0 ov)</span>
+                </div>
+                <span class="perf-match">vs India</span>
+              </div>
+              <div class="perf-medal bronze">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- PHOTO STRIP -->
+      <section class="photo-strip" id="news">
+        <div class="sec-header">
+          <h2 class="sec-title">Moments from the Ground</h2>
+          <a href="#" class="link-more"
+            >All Photos
+            <svg
+              width="13"
+              height="13"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              stroke-linecap="round"
+            >
+              <path d="M5 12h14M12 5l7 7-7 7" /></svg
+          ></a>
+        </div>
+        <div class="photos-grid">
+          <div class="photo-tile tall reveal">
+            <img src="images/mcg.png" alt="stadium" class="mcg-img" />
+            <div class="photo-label">MCG — India vs Australia</div>
+          </div>
+          <div class="photo-tile reveal">
+            <img
+              src="https://images.unsplash.com/photo-1593341646782-e0b495cff86d?w=400&auto=format&fit=crop&q=80"
+              alt="Batting"
+            />
+            <div class="photo-label">Century stand in Melbourne</div>
+          </div>
+          <div class="photo-tile reveal">
+            <img
+              src="https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=400&auto=format&fit=crop&q=80"
+              alt="Fielding"
+            />
+            <div class="photo-label">Boundary save — T20I</div>
+          </div>
+          <div class="photo-tile reveal">
+            <img
+              src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=400&auto=format&fit=crop&q=80"
+              alt="Crowd"
+            />
+            <div class="photo-label">Fans pack Old Trafford</div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="logo footer-logo">
+            <img
+              src="images/logo.png"
+              alt="CricScore logo"
+              class="footer-logo-img"
+            />
+            <div class="logo-text footer-logo-text">
+              <span class="logo-cric">CRIC</span>
+              <span class="logo-score">SCORE</span>
+            </div>
+          </div>
+          <p class="footer-tagline">
+            Live cricket scores, fast and reliable. Follow every ball of every
+            match across all international & domestic formats.
+          </p>
+          <div class="footer-social">
+            <a href="#" class="soc-btn" title="Facebook"
+              ><svg
+                width="15"
+                height="15"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                /></svg
+            ></a>
+            <a href="#" class="soc-btn" title="Twitter"
+              ><svg
+                width="15"
+                height="15"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"
+                /></svg
+            ></a>
+            <a href="#" class="soc-btn" title="Instagram"
+              ><svg
+                width="15"
+                height="15"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+              >
+                <rect x="2" y="2" width="20" height="20" rx="5" />
+                <circle cx="12" cy="12" r="4" />
+                <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" /></svg
+            ></a>
+            <a href="#" class="soc-btn" title="YouTube"
+              ><svg
+                width="15"
+                height="15"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"
+                />
+                <polygon
+                  points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"
+                  fill="white"
+                /></svg
+            ></a>
+          </div>
+        </div>
+        <div class="footer-links-group">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#">Live Scores</a></li>
+            <li><a href="#">Match Schedule</a></li>
+            <li><a href="#">Series</a></li>
+            <li><a href="#">ICC Rankings</a></li>
+            <li><a href="#">Cricket News</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-group">
+          <h4>Teams</h4>
+          <ul>
+            <li><a href="#">India</a></li>
+            <li><a href="#">Australia</a></li>
+            <li><a href="#">England</a></li>
+            <li><a href="#">Pakistan</a></li>
+            <li><a href="#">New Zealand</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-group">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Use</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 CricScore. All Rights Reserved.</p>
+        <p>Made with ❤️ for cricket fans worldwide</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
