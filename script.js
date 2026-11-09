@@ -1,6 +1,3 @@
-/* ============================================================
-   CricScore — script.js
-   ============================================================ */
 
 /* 1. NAVBAR SCROLL SHADOW */
 const navbar = document.getElementById("navbar");
